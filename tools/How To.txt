@@ -1,0 +1,13 @@
+.bat file renames files according to date modified for easier organization of large collections of files.
+
+Place in target directory of files to be renamed
+Note Prompt. Type ok to continue
+
+A translation (undo) file will be generated. If it is lost, you cannot undo. 
+
+To Undo, edit the .bat file via notepad/notepad++
+change this line: set "Undo=0" 
+to 
+set "Undo=1"
+
+Save and Run 
