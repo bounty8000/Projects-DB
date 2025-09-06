@@ -28,9 +28,9 @@ The research analyzes how these terms are employed in **official statements, sta
 
 The project identifies patterns in linguistic framing across different communication channels and highlights how semantic control plays a central role in China's domestic governance and international diplomacy.
 
-## Repository Contents (if applicable)
+## Repository Contents
 
-DLF LN490 Projects Day (Chinese) CCP use of Liberal Democratic Terms
+DLF LN490 Projects Day Digital Brochure + Project Title Slide + Briefing Slide Deck
 
 ## Date Presented
 **29 April 2021**  
