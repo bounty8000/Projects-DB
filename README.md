@@ -1,4 +1,4 @@
-# Useful Files & Technical Notes – [Tony]
+# Useful Files & Technical Notes 
 
 This repository contains a collection of IT related files, diagrams, and documentation that I've either created or found helpful throughout my work and study. It serves as a reference hub and personal knowledge base as I continue developing professionally in the communications and technical space.
 
