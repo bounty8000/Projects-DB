@@ -14,26 +14,26 @@ This adds variety, forces adaptation, and makes small-team gameplay more engagin
 ## Categories & Sub-Styles
 
 ### Infantry / Ground
-- 1. Rifle Squad (General Purpose)  
-- 2. Light Infantry (Scouts/Skirmishers)  
-- 3. Heavy Infantry (Suppression)  
-- 6. Sniper/Spotter  
+1. Rifle Squad (General Purpose)  
+2. Light Infantry (Scouts/Skirmishers)  
+3. Heavy Infantry (Suppression)  
+6. Sniper/Spotter  
 
 ### Sabotage / Disruption
-- 7. Saboteur (Demolitions)  
-- 8. Ambush Team (Mines/Satchels)  
-- 9. Raider Team (Smash-and-Grab)  
-- 10. Hunter-Killer (Anti-Armor)  
+7. Saboteur (Demolitions)  
+8. Ambush Team (Mines/Satchels)  
+9. Raider Team (Smash-and-Grab)  
+10. Hunter-Killer (Anti-Armor)  
 
 ### Support / Firepower
-- 11. Mortar Crew  
-- 14. Engineer / Combat Engineer  
-- 15. Supply / Logistics  
+11. Mortar Crew  
+14. Engineer / Combat Engineer  
+15. Supply / Logistics  
 
 ### Vehicles
-- 16. Mechanized Infantry  
-- 17. Tank Crew  
-- 19. Motorized Raiding Team  
+16. Mechanized Infantry  
+17. Tank Crew  
+19. Motorized Raiding Team  
 
 ---
 
