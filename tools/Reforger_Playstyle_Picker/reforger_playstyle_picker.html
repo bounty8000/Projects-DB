@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arma Reforger Playstyle Picker</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 12px 0; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  button { padding: 10px 14px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+  button:active { transform: translateY(1px); }
+  .pill { padding: 6px 10px; border-radius: 999px; border: 1px solid #ddd; }
+  .muted { color: #666; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .small { font-size: 12px; }
+  .badge { display: inline-block; padding: 4px 8px; border: 1px solid #ddd; border-radius: 999px; margin-right: 6px; margin-bottom: 6px; }
+  details { margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Arma Reforger – Small Team Playstyle Picker (2–4 players)</h1>
+  <p class="muted">Click "Roll" to randomly choose <strong>two categories</strong> and sub-styles to try this session.</p>
+
+  <div class="card">
+    <div class="row">
+      <button id="roll">🎲 Roll</button>
+      <label>Sub-styles per category:
+        <select id="subsPerCat">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+        </select>
+      </label>
+      <label>Allow duplicates across categories?
+        <select id="dupes">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </label>
+      <button id="clear">Reset</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <strong>Categories</strong>
+    <div class="grid small">
+      <div>
+        <div class="pill"><strong>Infantry / Ground</strong></div>
+        <div>
+          <span class="badge">1. Rifle Squad</span>
+          <span class="badge">2. Light Infantry</span>
+          <span class="badge">3. Heavy Infantry</span>
+          <span class="badge">6. Sniper/Spotter</span>
+        </div>
+      </div>
+      <div>
+        <div class="pill"><strong>Sabotage / Disruption</strong></div>
+        <div>
+          <span class="badge">7. Saboteur</span>
+          <span class="badge">8. Ambush</span>
+          <span class="badge">9. Raider</span>
+          <span class="badge">10. Hunter‑Killer (AT)</span>
+        </div>
+      </div>
+      <div>
+        <div class="pill"><strong>Support / Firepower</strong></div>
+        <div>
+          <span class="badge">11. Mortar Crew</span>
+          <span class="badge">14. Engineer</span>
+          <span class="badge">15. Supply/Logistics</span>
+        </div>
+      </div>
+      <div>
+        <div class="pill"><strong>Vehicles</strong></div>
+        <div>
+          <span class="badge">16. Mechanized Infantry</span>
+          <span class="badge">17. Tank Crew</span>
+          <span class="badge">19. Motorized Raiders</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <strong>Result</strong>
+    <div id="result" class="mono" style="margin-top:10px;"></div>
+  </div>
+
+  <div class="card small">
+    <details>
+      <summary><strong>How it works / Pseudocode</strong></summary>
+      <pre>
+categories = ["Infantry/Ground", "Sabotage/Disruption", "Support/Firepower", "Vehicles"]
+substyles = {
+  "Infantry/Ground": ["1 Rifle Squad", "2 Light Infantry", "3 Heavy Infantry", "6 Sniper/Spotter"],
+  "Sabotage/Disruption": ["7 Saboteur", "8 Ambush", "9 Raider", "10 Hunter-Killer"],
+  "Support/Firepower": ["11 Mortar Crew", "14 Engineer", "15 Supply/Logistics"],
+  "Vehicles": ["16 Mechanized", "17 Tank Crew", "19 Motorized Raiders"]
+}
+
+pickTwo(categories) -> sample without replacement
+pickSubs(cat, k) -> sample from substyles[cat] (without replacement)
+      </pre>
+    </details>
+  </div>
+
+<script>
+const categories = [
+  "Infantry / Ground",
+  "Sabotage / Disruption",
+  "Support / Firepower",
+  "Vehicles"
+];
+
+const substyles = {
+  "Infantry / Ground": [
+    "1. Rifle Squad (General Purpose)",
+    "2. Light Infantry (Scouts/Skirmishers)",
+    "3. Heavy Infantry (Suppression)",
+    "6. Sniper/Spotter"
+  ],
+  "Sabotage / Disruption": [
+    "7. Saboteur (Demolitions)",
+    "8. Ambush Team (Mines/Satchels)",
+    "9. Raider Team (Smash-and-Grab)",
+    "10. Hunter-Killer (Anti-Armor)"
+  ],
+  "Support / Firepower": [
+    "11. Mortar Crew",
+    "14. Engineer / Combat Engineer",
+    "15. Supply / Logistics"
+  ],
+  "Vehicles": [
+    "16. Mechanized Infantry",
+    "17. Tank Crew",
+    "19. Motorized Raiding Team"
+  ]
+};
+
+function sample(arr, k) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, k);
+}
+
+function roll() {
+  const kSubs = parseInt(document.getElementById('subsPerCat').value, 10);
+  const allowDupes = document.getElementById('dupes').value === 'yes';
+
+  const pickedCats = sample(categories, 2);
+  let picked = [];
+
+  pickedCats.forEach(cat => {
+    const pool = substyles[cat].slice();
+    const subs = sample(pool, Math.min(kSubs, pool.length));
+    picked.push({cat, subs});
+  });
+
+  // prevent duplicates across the two categories if checkbox says so
+  if (!allowDupes) {
+    const names = new Set();
+    picked.forEach(group => {
+      group.subs = group.subs.filter(s => {
+        const key = s.replace(/\s+/g, ' ').trim().toLowerCase();
+        if (names.has(key)) return false;
+        names.add(key);
+        return true;
+      });
+    });
+  }
+
+  render(picked);
+}
+
+function render(picked) {
+  const res = document.getElementById('result');
+  res.innerHTML = '';
+  picked.forEach(group => {
+    const catHeader = document.createElement('div');
+    catHeader.innerHTML = `<strong>${group.cat}</strong>`;
+    res.appendChild(catHeader);
+
+    const ul = document.createElement('ul');
+    group.subs.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      ul.appendChild(li);
+    });
+    res.appendChild(ul);
+  });
+}
+
+document.getElementById('roll').addEventListener('click', roll);
+document.getElementById('clear').addEventListener('click', () => {
+  document.getElementById('result').innerHTML = '';
+});
+</script>
+</body>
+</html>
