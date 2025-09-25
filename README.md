@@ -18,16 +18,13 @@ This library is a work in progress. I expect it to grow as I continue.
 
 This folder contains material from my master’s program and related academic projects.
 
-  ChineseDiscourse/ – Notes, drafts, and research work focused on Chinese discourse analysis.
-
-  SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
+	ChineseDiscourse/ – Notes, drafts, and research work focused on Chinese discourse analysis.
+	SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
 
 📂 tools
 
 A collection of utilities, scripts, and experimental tools I’ve built.
 
-  EmptyReforgerShades/ – A Windows batch utility to clear shader cache for Arma Reforger to reduce stuttering from memory leaks.
-
-  File_Renamer(timestamp)/ – A script to batch-rename files by last modified date (with undo support).
-
-  Reforger_Playstyle_Picker/ – A browser-based randomizer tool that helps small squads (2–4 players) pick playstyles in Arma Reforger.
+	EmptyReforgerShades/ – A Windows batch utility to clear shader cache for Arma Reforger to reduce stuttering from memory leaks.
+	File_Renamer(timestamp)/ – A script to batch-rename files by last modified date (with undo support).
+	Reforger_Playstyle_Picker/ – A browser-based randomizer tool that helps small squads (2–4 players) pick playstyles in Arma Reforger.
