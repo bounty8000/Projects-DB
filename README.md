@@ -22,6 +22,8 @@ This folder contains material from my master’s program and related academic pr
 	
 	SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
 
+	SignalCCC/UpperTI_Diagram - A PowerPoint presentation developed during the U.S. Army Signal Captains Career Course.  It outlines a 		**division-level network architecture**, including transport systems (HCLOS, TRILOS, STT, SMART-T, VSAT), services integration, and 	PACE planning. This product was built as a **class project/planning exercise** to demonstrate large-scale signal planning and to serve 	as a reference for division-level communications architecture. 
+
 📂 tools
 
 A collection of utilities, scripts, and experimental tools I’ve built.
