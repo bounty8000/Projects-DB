@@ -18,18 +18,14 @@ This library is a work in progress. I expect it to grow as I continue.
 
 This folder contains material from my master’s program and related academic projects.
 
-	ChineseDiscourse/ – Notes, drafts, and research work focused on Chinese discourse analysis.
-	
-	SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
-
-	SignalCCC/UpperTI_Diagram - A PowerPoint presentation developed during the U.S. Army Signal Captains Career Course.  It outlines a 		**division-level network architecture**, including transport systems (HCLOS, TRILOS, STT, SMART-T, VSAT), services integration, and 	PACE planning. This product was built as a **class project/planning exercise** to demonstrate large-scale signal planning and to serve 	as a reference for division-level communications architecture. 
+- ChineseDiscourse/ – Notes, drafts, and research work focused on Chinese discourse analysis.
+- SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
+- SignalCCC/UpperTI_Diagram - PowerPoint presentation from the Signal Captains Career Course showcasing a division-level network architecture, covering TOC/CP layouts, transport systems, services integration, and PACE planning as a class project reference.
 
 📂 tools
 
 A collection of utilities, scripts, and experimental tools I’ve built.
 
-	EmptyReforgerShades/ – A Windows batch utility to clear shader cache for Arma Reforger to reduce stuttering from memory leaks.
-	
-	File_Renamer(timestamp)/ – A script to batch-rename files by last modified date (with undo support).
-	
-	Reforger_Playstyle_Picker/ – A browser-based randomizer tool that helps small squads (2–4 players) pick playstyles in Arma Reforger.
+- EmptyReforgerShades/ – A Windows batch utility to clear shader cache for Arma Reforger to reduce stuttering from memory leaks.
+- File_Renamer(timestamp)/ – A script to batch-rename files by last modified date (with undo support).
+- Reforger_Playstyle_Picker/ – A browser-based randomizer tool that helps small squads (2–4 players) pick playstyles in Arma Reforger.
