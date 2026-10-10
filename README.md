@@ -14,14 +14,6 @@ This library is a work in progress. I expect it to grow as I continue.
 
 ## Repository Layout
 
-📂 EDU_Capstone
-
-This folder contains material from my master’s program and related academic projects.
-
-- ChineseDiscourse/ – Notes, drafts, and research work focused on Chinese discourse analysis.
-- SharePoint_Project/ – Documentation and artifacts from a SharePoint-related academic/technical project.
-- SignalCCC/UpperTI_Diagram - PowerPoint presentation from the Signal Captains Career Course showcasing a division-level network architecture, covering TOC/CP layouts, transport systems, services integration, and PACE planning as a class project reference.
-
 📂 tools
 
 A collection of utilities, scripts, and experimental tools I’ve built.
