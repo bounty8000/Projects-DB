@@ -21,3 +21,4 @@ A collection of utilities, scripts, and experimental tools I’ve built.
 - EmptyReforgerShades/ – A Windows batch utility to clear shader cache for Arma Reforger to reduce stuttering from memory leaks.
 - File_Renamer(timestamp)/ – A script to batch-rename files by last modified date (with undo support).
 - Reforger_Playstyle_Picker/ – A browser-based randomizer tool that helps small squads (2–4 players) pick playstyles in Arma Reforger.
+- HuntOrFish/ -A Python-based weather decision-support dashboard designed to identify favorable upcoming days using a weighted scoring system. The application evaluates a rolling 10-day local weather forecast based on wind speed, temperature changes, cloud cover, humidity, and day-of-week preferences.
